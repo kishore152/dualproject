@@ -1,0 +1,160 @@
+      <!-- Sections:Start -->
+      
+      <div data-bs-spy="scroll" class="scrollspy-example ">
+
+        <section class="breadcrumb-area bg-default section-py position-relative" 
+        data-background="https://themephi.net/template/aidoodleh/aidoodle/assets/images/breadcrumb/breadcrumb-bg.jpg" style="padding-block-start: 5.2rem;background-image: url(../../assets/images/common/breadcrumb-bg.jpg);background-repeat: no-repeat;background-size: cover;background-position: center;">
+          <div class="container mt-11">
+              <div class="row">
+                   <div class="col-md-3 con-left">
+
+                    <h3 class="fw-extrabold banner-title-prime">
+                      What will happen next ?
+                    </h3>
+                    <h6 class="mb-12">Your success is our priority. Share your objectives, and we'll ensure you're connected with the ideal expert.
+                    </h6>  
+                    <ul class="timeline timeline-outline mb-0">
+                      <li class="timeline-item timeline-item-transparent border-dashed" style="height:220px">
+                        <span class="timeline-point timeline-point-primary"></span>
+                        <div class="timeline-event">
+                          <div class="timeline-header mb-3">
+                            <h6 class="mb-0 banner-title-prime">1. Free technical consultation</h6>
+                         </div>
+                          
+                        </div>
+                      </li>
+                      <li class="timeline-item timeline-item-transparent border-dashed" style="height:220px">
+                        <span class="timeline-point timeline-point-success"></span>
+                        <div class="timeline-event">
+                          <div class="timeline-header mb-3">
+                            <h6 class="mb-0 banner-title-prime">2. Connect with the tech team</h6>
+                           
+                          </div>
+                          </div>
+                      </li>
+                      <li class="timeline-item timeline-item-transparent border-dashed" style="height:220px">
+                        <span class="timeline-point timeline-point-info"></span>
+                        <div class="timeline-event">
+                          <div class="timeline-header mb-3">
+                            <h6 class="mb-0 banner-title-prime" >3. Onboarding the team</h6>
+                           </div>
+   
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-9 col-12">
+                    <div class="card h-100 px-5 py-5 shadow-lg">
+                      <div class="card-body">
+                        <h3 class="mb-4 fw-extrabold">Get in touch to discuss your project, request a quote or even just to pick our brains.<span class="banner-title-prime"></span></h3>
+                        <p class="mb-6">
+                          To apply for a job, visit the career page.
+                        </p>
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                          <h6>1. Tell us about your company</h6>
+                          <div class="row g-4">
+                            <div class="col-md-12">
+                               <input type="text" formControlName="customerName" class="form-control in" id="contact-form-fullname" placeholder="Your Name*">
+                               <div *ngIf="(submitted || contactForm.get('customerName')?.touched) && contactForm.get('customerName')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+                              </div>
+                            <div class="col-md-6">
+                              <input type="text" formControlName="customerEmail" class="form-control in " id="contact-form-fullname" placeholder="Your Email*">
+                              <div *ngIf="(submitted || contactForm.get('customerEmail')?.touched) && contactForm.get('customerEmail')?.errors" class="text-danger">
+                                <div *ngIf="contactForm.get('customerEmail')?.errors?.['required']">
+                                  <span style="font-size: 11px" class="mt-1">Email is required.</span>
+                                </div>
+                                <div *ngIf="contactForm.get('customerEmail')?.errors?.['email']">
+                                  <span style="font-size: 11px" class="mt-1">Please enter a valid email address.</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" formControlName="customerPhoneNumber" maxlength="10"  id="contact-form-email" class="form-control in" placeholder="Your Phone Number*">
+                                <div *ngIf="(submitted || contactForm.get('customerPhoneNumber')?.touched) && contactForm.get('customerPhoneNumber')?.errors" class="text-danger">
+                                  <div *ngIf="contactForm.get('customerPhoneNumber')?.errors?.['required']">
+                                    <span style="font-size: 11px" class="mt-1">Phone number is required.</span>
+                                  </div>
+                                  <div *ngIf="contactForm.get('customerPhoneNumber')?.errors?.['pattern']">
+                                    <span style="font-size: 11px" class="mt-1">Phone number must be exactly 10 digits.</span>
+                                  </div>
+                                </div>
+                              </div>
+                            <div class="col-md-12">
+                              <input type="text" formControlName="companyNameorWebsite"  id="contact-form-email" class="form-control in" placeholder="Company Name or Website*">
+                              <div *ngIf="(submitted || contactForm.get('companyNameorWebsite')?.touched) && contactForm.get('companyNameorWebsite')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+                            </div>
+                            <h6 class="mb-0">2. Tell us more about your project</h6>
+                            <div class="col-12">
+                               <textarea id="contact-form-message" formControlName="projectBrief" class="form-control" rows="4" placeholder="Describe Your Project Briefly*"></textarea>
+                               <div *ngIf="(submitted || contactForm.get('projectBrief')?.touched) && contactForm.get('projectBrief')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+                              </div>
+                            <div class="col-12">
+                              <textarea id="contact-form-message" formControlName="projectQueries" class="form-control" rows="4" placeholder="Detail Your Queries*"></textarea>
+                              <div *ngIf="(submitted || contactForm.get('projectQueries')?.touched) && contactForm.get('projectQueries')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="dropzone needsclick dz-clickable" id="dropzone-banner">
+                                <div class="dz-message-dz needsclick">
+                                    Drag images or browse to upload (optional)
+                                    <span class="note needsclick"></span>
+                                </div>
+                            </div>
+                            </div>
+                            <h6 class="mb-0">3. Where did you hear about us?</h6>
+                            <div class="col-12">
+                              <textarea formControlName="heardAboutUs" class="form-control" rows="5" placeholder="How Did You hear About Us*"></textarea>
+                              <div *ngIf="(submitted || contactForm.get('heardAboutUs')?.touched) && contactForm.get('heardAboutUs')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+   
+                            </div>
+                            <div class="col-12  mt-7">
+                              <button class="btn btn-md btn-primary py-3 px-10 shadow-lg bg-btn-linear" type="submit">
+                                Submit
+                            </button>
+                            </div>
+                            <div class="col-12">
+                                <p>By clicking the button 'SUBMIT' you acknowledge reading and accepting our <span class="banner-title-prime cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalScrollable" (click)="scrolltop()">Privacy Policy.</span></p>
+                            </div> 
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>  
+              </div>
+          </div>
+          <div class="breadcrumb-shape">
+            <img src="../../assets/images/common/circle.png" alt="" class="breadcrumb-shape-4">
+          </div>
+      </section>
+
+
+      </div>
+
+      <div class="modal fade" id="modalScrollable" tabindex="-1"  aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalScrollableTitle">Modal title</h5>
+             
+            </div>
+            <div class="modal-body" style="margin-top: -45px;">
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+             <app-privacypolicy></app-privacypolicy>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="w-50 btn btn-label-secondary waves-effect" data-bs-dismiss="modal" (click)="scrolltop()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App Loader</title>
+  <script>
+    if (localStorage.getItem("authToken")) {
+      window.location.href = "./main/index.html";
+    } else {
+      window.location.href = "./login/index.html";
+    }
+  </script>
+</head>
+<body>
+  <p>Loading...</p>
+</body>
+</html>
